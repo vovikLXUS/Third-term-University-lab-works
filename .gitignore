@@ -1,0 +1,61 @@
+# =====================================================================
+# Git ignore file for Python & Academic Project (ЙОПІ)
+# =====================================================================
+
+# --- Virtual Environments ---
+venv/
+.venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# --- Byte-compiled / optimized / DLL files ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyd
+
+# --- IDEs & Editors ---
+# JetBrains (PyCharm, IntelliJ IDEA)
+.idea/
+*.iml
+*.iws
+
+# Visual Studio Code
+.vscode/
+*.code-workspace
+
+# Other editors
+*.swp
+*.swo
+*~
+
+# --- Operating System Files ---
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# --- Microsoft Office Temporary & Lock Files ---
+~$*.docx
+~$*.doc
+~$*.xlsx
+~$*.xls
+~$*.pptx
+~$*.ppt
+
+# --- Logs, Diagnostics & Temp files ---
+*.log
+*.tmp
+*.temp
+*.bak
