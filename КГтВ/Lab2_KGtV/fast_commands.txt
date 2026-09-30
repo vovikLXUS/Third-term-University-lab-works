@@ -1,0 +1,112 @@
+================================================================================
+FAST COMMANDS & VERIFICATION GUIDE FOR LABORATORY WORK #2
+Topic: Adding transparency, cropping, and contrast adjustment of images
+Script file: image_processor.py
+How to run:
+  python image_processor.py
+Automatic test run (demo mode):
+  python image_processor.py --demo
+================================================================================
+
+--------------------------------------------------------------------------------
+1. CHANGE IMAGE TRANSPARENCY (Option 1)
+--------------------------------------------------------------------------------
+Select an option (1-8): 1
+Enter input image path: test_images/test_landscape.jpg
+Enter output image path: output_transparency/landscape_alpha_50pct.png
+Enter alpha value (0-255): 128
+
+Result:
+- Saves PNG image with 50% transparency (Alpha = 128/255).
+- Displays output file size (KB).
+
+--------------------------------------------------------------------------------
+2. REMOVE BACKGROUND COLOR (CHROMA KEY) (Option 2)
+--------------------------------------------------------------------------------
+Select an option (1-8): 2
+Enter input image path: test_images/test_shapes.png
+Enter output image path: output_transparency/shapes_transparent_bg.png
+
+Result:
+- The solid light gray background around shapes is made fully transparent (Alpha = 0).
+- Over 275,000 pixels (>57% area) made transparent.
+
+--------------------------------------------------------------------------------
+3. OVERLAY SEMI-TRANSPARENT LAYER (Option 3)
+--------------------------------------------------------------------------------
+Select an option (1-8): 3
+Enter base image path: test_images/test_landscape.jpg
+Enter overlay image path: test_images/test_transparent.png
+Enter output image path: output_transparency/landscape_with_overlay.png
+Enter X coordinate for overlay: 100
+Enter Y coordinate for overlay: 100
+Enter overlay opacity (0.0..1.0): 0.85
+
+Result:
+- Semi-transparent layer is blended on top of the landscape image at (100, 100).
+- Applies Alpha Compositing.
+
+--------------------------------------------------------------------------------
+4. SPLIT IMAGE INTO N PARTS (Option 4)
+--------------------------------------------------------------------------------
+Select an option (1-8): 4
+Enter input image path: test_images/test_landscape.jpg
+Enter output directory for parts: output_cropping/split_3parts
+Enter number of parts: 3
+
+Result:
+- 1200x800 image is split into 3 vertical strips of 400x800 px (rule of thirds).
+- Parts are saved into the specified directory.
+
+--------------------------------------------------------------------------------
+5. CROP: KEEP SELECTED REGION (Option 5)
+--------------------------------------------------------------------------------
+Select an option (1-8): 5
+Enter input image path: test_images/test_landscape.jpg
+Enter output image path: output_cropping/cropped_focus_center.jpg
+Enter coordinates X1,Y1,X2,Y2 (comma-separated): 300,200,900,600
+
+Result:
+- Discards everything outside the rectangle.
+- Keeps 600x400 px center region.
+
+--------------------------------------------------------------------------------
+6. CROP: REMOVE SELECTED REGION (Option 6)
+--------------------------------------------------------------------------------
+Select an option (1-8): 6
+Enter input image path: test_images/test_landscape.jpg
+Enter output image path: output_cropping/landscape_removed_center_transparent.png
+Enter coordinates X1,Y1,X2,Y2 (comma-separated): 400,250,800,550
+Select removal mode (1 - transparent window, 2 - white fill): 1
+
+Result:
+- Selected 400x300 area is cut out, creating a transparent window in the center.
+(If choosing 2, fills the area with white color).
+
+--------------------------------------------------------------------------------
+7. ADJUST CONTRAST (NEWY FORMULA) (Option 7)
+--------------------------------------------------------------------------------
+7.1. Increase contrast (K > 1):
+Select an option (1-8): 7
+Enter input image path: test_images/test_landscape.jpg
+Enter output image path: output_contrast/landscape_contrast_high_k1_6.jpg
+Enter contrast factor K (>1 increase, <1 decrease): 1.6
+
+Result:
+- Contrast σ increases from 79.9 to 93.6 (+17.2%).
+- Mean brightness AveY stays stable (~127).
+
+7.2. Decrease contrast (K < 1):
+Select an option (1-8): 7
+Enter input image path: test_images/test_landscape.jpg
+Enter output image path: output_contrast/landscape_contrast_low_k0_5.jpg
+Enter contrast factor K (>1 increase, <1 decrease): 0.5
+
+Result:
+- Contrast σ decreases from 79.9 to 60.0 (-24.8%).
+
+--------------------------------------------------------------------------------
+8. EXIT (Option 8)
+--------------------------------------------------------------------------------
+Select an option (1-8): 8
+================================================================================

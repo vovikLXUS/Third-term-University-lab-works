@@ -11,7 +11,7 @@ def task1():
         ]
     )
 
-    # Створення квадратної матриці 3х3
+    # Створення квадратної матриці 3x3
     # .eye() створює матрицю типу float, 'dtype=int' - явно вказує на цільний тип чисел
     I = np.eye(3, dtype=int)
 
@@ -35,13 +35,13 @@ def task2():
         ]
     )
 
-    # .linalg.inv() = А^-1, іншими словами обернена матриця А,
+    # .linalg.inv() = A^-1, іншими словами обернена матриця A,
     # символ '@' використовується для множення матриць
-    x = B @ (np.linalg.inv(A))
-    x = np.round(x).astype(int)
+    X = B @ (np.linalg.inv(A))
+    X = np.round(X).astype(int)
 
     print("\n=== Task 2 ===")
-    print(f"Result:\n{x}")
+    print(f"Result:\n{X}")
 
 
 def task3():
@@ -130,3 +130,11 @@ def task5():
     print("\n=== Task 5 ===")
     print(f"Area of a face of ABC: {S_abc:.4f}")
     print(f"Volume of a piramid: {V_abcd:.1f}")
+
+
+if __name__ == "__main__":
+    task1()
+    task2()
+    task3()
+    task4()
+    task5()
